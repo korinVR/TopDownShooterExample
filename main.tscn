@@ -1,11 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://dfe2gr7cxyit7"]
+[gd_scene load_steps=3 format=3 uid="uid://dfe2gr7cxyit7"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_4cojj"]
+[ext_resource type="Script" path="res://title.gd" id="2_2gskj"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_4cojj")
 
 [node name="Title" type="Node2D" parent="."]
+script = ExtResource("2_2gskj")
 
 [node name="Button" type="Button" parent="Title"]
 offset_left = 480.0
@@ -22,5 +24,3 @@ offset_top = 182.0
 offset_right = 620.0
 offset_bottom = 208.0
 text = "Delta Strider"
-
-[connection signal="pressed" from="Title/Button" to="." method="_on_button_pressed"]
