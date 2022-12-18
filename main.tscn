@@ -6,4 +6,7 @@
 script = ExtResource("1_4cojj")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 3, 4)
+transform = Transform3D(1, 0, 0, 0, 0.34202, 0.939693, 0, -0.939693, 0.34202, 0, 60, 35)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.684829, 0.51914, -0.511374, -0.0807398, 0.751494, 0.65478, 0.724217, -0.407124, 0.55656, 0, 0, 0)
