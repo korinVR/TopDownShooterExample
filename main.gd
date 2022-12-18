@@ -5,6 +5,8 @@ const GameScene = preload("res://game.tscn")
 
 const Player = preload("res://player.tscn")
 
+signal reset_pressed()
+
 func _ready() -> void:
 	while true:
 		var title_scene := TitleScene.instantiate()
@@ -20,9 +22,16 @@ func _ready() -> void:
 		player.global_transform = spwan_transform
 		game_scene.add_child(player)
 		
-		while true:
-			if Input.is_action_just_pressed("Reset"):
-				break
-			await get_tree().create_timer(0).timeout
+		await reset_pressed
+		
+#		while true:
+#			if Input.is_action_just_pressed("Reset"):
+#				break
+#			await get_tree().create_timer(0).timeout
 
 		game_scene.queue_free()
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("Reset"):
+		reset_pressed.emit()
+
