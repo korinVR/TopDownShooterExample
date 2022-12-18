@@ -20,11 +20,9 @@ func _ready() -> void:
 		player.global_transform = spwan_transform
 		game_scene.add_child(player)
 		
-		break
+		while true:
+			if Input.is_action_just_pressed("Reset"):
+				break
+			await get_tree().create_timer(0).timeout
 
-#		while true:
-#			if Input.is_key_pressed(KEY_R):
-#				break
-#			await get_tree().create_timer(0).timeout
-#
-#		game_scene.queue_free()
+		game_scene.queue_free()
