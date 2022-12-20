@@ -34,6 +34,7 @@ Fire={
 3d_physics/layer_2="MyShot"
 3d_physics/layer_8="Enemy"
 3d_physics/layer_9="EnemyShot"
+3d_physics/layer_16="Wall"
 
 [physics]
 
