@@ -22,7 +22,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("Fire"):
 		var my_shot := MyShot.instantiate() as RigidBody3D
 		get_parent().add_child(my_shot)
-		my_shot.global_transform = global_transform
+		my_shot.global_transform = $Model/MyShotSpawnPosition.global_transform
 		
 		var forward := Vector3(cos(angle), 0, -sin(angle))
 		my_shot.apply_impulse(forward * 100)

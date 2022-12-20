@@ -1,24 +1,27 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=4 format=3 uid="uid://cry177u2y4cs1"]
 
-[ext_resource type="Script" path="res://player/Player.gd" id="1_gyrdp"]
+[ext_resource type="Script" path="res://player/Player.gd" id="1_aaysd"]
 
-[sub_resource type="PrismMesh" id="PrismMesh_g0486"]
+[sub_resource type="PrismMesh" id="PrismMesh_0p23q"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_l5lya"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_0miah"]
 radius = 5.0
 
 [node name="Player" type="RigidBody3D"]
 axis_lock_linear_y = true
 mass = 10000.0
 lock_rotation = true
-script = ExtResource("1_gyrdp")
+script = ExtResource("1_aaysd")
 
 [node name="Model" type="Node3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Model"]
 transform = Transform3D(-4.37114e-07, 10, -4.37114e-08, -4.23516e-21, -4.37114e-07, -1, -10, -4.37114e-07, 1.91069e-15, 2, 0, 0)
-mesh = SubResource("PrismMesh_g0486")
+mesh = SubResource("PrismMesh_0p23q")
 skeleton = NodePath("../..")
 
+[node name="MyShotSpawnPosition" type="Node3D" parent="Model"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_l5lya")
+shape = SubResource("SphereShape3D_0miah")
