@@ -23,12 +23,6 @@ func _ready() -> void:
 		game_scene.add_child(player)
 		
 		await reset_pressed
-		
-#		while true:
-#			if Input.is_action_just_pressed("Reset"):
-#				break
-#			await get_tree().create_timer(0).timeout
-
 		game_scene.queue_free()
 
 func _input(event: InputEvent) -> void:
