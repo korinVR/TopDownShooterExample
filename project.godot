@@ -23,6 +23,13 @@ Reset={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="Player"
+3d_physics/layer_2="MyShot"
+3d_physics/layer_8="Enemy"
+3d_physics/layer_9="EnemyShot"
+
 [physics]
 
 3d/default_gravity_vector=Vector3(0, 0, 0)
