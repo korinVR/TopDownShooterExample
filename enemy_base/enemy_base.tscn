@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8jg7fjdbtbdm"]
+
+[ext_resource type="Script" path="res://enemy_base/enemy_base.gd" id="1_76050"]
+
+[sub_resource type="TorusMesh" id="TorusMesh_s8qux"]
+inner_radius = 15.0
+outer_radius = 20.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_f2ety"]
+radius = 5.0
+height = 10.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_b0h2j"]
+height = 5.0
+radius = 20.0
+
+[node name="EnemyBase" type="RigidBody3D"]
+collision_layer = 128
+collision_mask = 3
+max_contacts_reported = 1
+contact_monitor = true
+freeze = true
+freeze_mode = 1
+script = ExtResource("1_76050")
+
+[node name="Ring" type="MeshInstance3D" parent="."]
+mesh = SubResource("TorusMesh_s8qux")
+
+[node name="Core" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_f2ety")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_b0h2j")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
