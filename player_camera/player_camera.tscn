@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dk33npjhglt6r"]
+
+[ext_resource type="Script" path="res://player_camera/player_camera.gd" id="1_3pyqb"]
+
+[node name="PlayerCamera" type="Camera3D"]
+transform = Transform3D(1, -6.76539e-16, 1.19292e-16, 1.19292e-16, 0.34202, 0.939693, -6.76539e-16, -0.939693, 0.34202, 2.08165e-12, 60, 35)
+script = ExtResource("1_3pyqb")

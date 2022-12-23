@@ -15,14 +15,16 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		apply_force(direction * ACCELERATION)
 		
-		var target_angle := atan2(-stick.y, stick.x)
+		var target_angle := atan2(stick.y, stick.x)
 		angle = lerp_angle(angle, target_angle, 0.1)
-		$Model.rotation = Vector3(0, angle, 0)
+		$Model.rotation = Vector3(0, -PI / 2 - angle, 0)
 	
 	if Input.is_action_just_pressed("Fire"):
 		var my_shot := MyShot.instantiate() as RigidBody3D
 		get_parent().add_child(my_shot)
 		my_shot.global_transform = $Model/MyShotSpawnPosition.global_transform
 		
-		var forward := Vector3(cos(angle), 0, -sin(angle))
+		var forward := Vector3(cos(angle), 0, sin(angle))
 		my_shot.apply_impulse(forward * 100)
+	
+	($CameraTarget as Node3D).position = linear_velocity * 0.8

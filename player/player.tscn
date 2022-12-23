@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://player/Player.gd" id="1_aaysd"]
 
-[sub_resource type="PrismMesh" id="PrismMesh_0p23q"]
+[sub_resource type="PrismMesh" id="PrismMesh_wrq81"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_0miah"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_33by6"]
 radius = 5.0
 
 [node name="Player" type="RigidBody3D"]
@@ -17,12 +17,14 @@ script = ExtResource("1_aaysd")
 [node name="Model" type="Node3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Model"]
-transform = Transform3D(-4.37114e-07, 10, -4.37114e-08, -4.23516e-21, -4.37114e-07, -1, -10, -4.37114e-07, 1.91069e-15, 2, 0, 0)
-mesh = SubResource("PrismMesh_0p23q")
+transform = Transform3D(10, -6.97574e-15, -1.5246e-23, -1.5246e-22, -4.37114e-07, 1, -6.97574e-15, -10, -4.37114e-08, 2.08165e-12, 2.08165e-12, -2)
+mesh = SubResource("PrismMesh_wrq81")
 skeleton = NodePath("../..")
 
-[node name="MyShotSpawnPosition" type="Node3D" parent="Model"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+[node name="MyShotSpawnPosition" type="Marker3D" parent="Model"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, -6)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_0miah")
+shape = SubResource("SphereShape3D_33by6")
+
+[node name="CameraTarget" type="Node3D" parent="." groups=["player_camera_target"]]
