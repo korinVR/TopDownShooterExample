@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbajpjqyku81r"]
+
+[ext_resource type="Script" path="res://enemy_ship/enemy_ship.gd" id="1_ray2f"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_jux8r"]
+size = Vector3(10, 5, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k75ms"]
+size = Vector3(10, 5, 10)
+
+[node name="EnemyShip" type="RigidBody3D"]
+collision_layer = 128
+collision_mask = 32771
+axis_lock_linear_y = true
+mass = 10000.0
+max_contacts_reported = 1
+contact_monitor = true
+lock_rotation = true
+linear_damp = 1.0
+script = ExtResource("1_ray2f")
+acceleration = 1e+06
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_jux8r")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_k75ms")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
