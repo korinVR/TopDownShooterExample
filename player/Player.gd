@@ -7,6 +7,10 @@ const ACCELERATION = 2000000.0
 
 var angle := 0.0
 
+func _ready() -> void:
+	owner = get_parent()
+	set_unique_name_in_owner(true)
+
 func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
