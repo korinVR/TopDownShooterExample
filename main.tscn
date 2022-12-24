@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dfe2gr7cxyit7"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_4cojj"]
-[ext_resource type="PackedScene" uid="uid://bk1hjiejpt7wj" path="res://player_camera.tscn" id="2_3va6d"]
+[ext_resource type="PackedScene" uid="uid://dk33npjhglt6r" path="res://player_camera/player_camera.tscn" id="2_7h3w7"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_4cojj")
@@ -9,6 +9,5 @@ script = ExtResource("1_4cojj")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.684829, 0.51914, -0.511374, -0.0807398, 0.751494, 0.65478, 0.724217, -0.407124, 0.55656, 0, 0, 0)
 
-[node name="PlayerCamera" parent="." instance=ExtResource("2_3va6d")]
-transform = Transform3D(1, -6.76539e-16, 1.19292e-16, 1.19292e-16, 0.34202, 0.939693, -6.76539e-16, -0.939693, 0.34202, 2.08165e-12, 60, 35)
-offset = Vector3(2.08165e-12, 60, 35)
+[node name="PlayerCamera" parent="." instance=ExtResource("2_7h3w7")]
+offset = Vector3(0, 60, 35)
