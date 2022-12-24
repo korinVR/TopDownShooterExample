@@ -14,9 +14,13 @@ func _ready() -> void:
 		await title_scene.game_started
 		title_scene.queue_free()
 		
+		GameState.reset()
+		
 		var player_left := 3
 		
-		for level_index in [1, 1]:
+		for level_index in range(1, 2):
+			print(level_index)
+			
 			var level := Level.instantiate()
 			add_child(level)
 			level.name = "Level"
