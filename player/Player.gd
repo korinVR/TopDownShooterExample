@@ -7,6 +7,10 @@ const ACCELERATION = 2000000.0
 
 var angle := 0.0
 
+func _ready() -> void:
+	owner = get_parent()
+	set_unique_name_in_owner(true)
+
 func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -28,3 +32,7 @@ func _physics_process(delta: float) -> void:
 		my_shot.apply_impulse(forward * 100)
 	
 	($CameraTarget as Node3D).position = linear_velocity * 0.8
+
+func get_camera_target() -> Node3D:
+	return $CameraTarget
+

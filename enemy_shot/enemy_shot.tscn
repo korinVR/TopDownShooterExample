@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://p3pfmxndcg37"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a6bst"]
+shading_mode = 0
+albedo_color = Color(1, 0, 0.337255, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_w2yuv"]
+material = SubResource("StandardMaterial3D_a6bst")
+radius = 1.0
+height = 2.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6eixu"]
+radius = 1.0
+
+[node name="EnemyShot" type="RigidBody3D"]
+collision_layer = 256
+collision_mask = 0
+lock_rotation = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_w2yuv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_6eixu")
