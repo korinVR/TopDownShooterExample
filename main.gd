@@ -1,7 +1,7 @@
 extends Node3D
 
 const TitleScene = preload("res://title/title.tscn")
-const GameScene = preload("res://game.tscn")
+const GameScene = preload("res://levels/level_1.tscn")
 
 const Player = preload("res://player/player.tscn")
 

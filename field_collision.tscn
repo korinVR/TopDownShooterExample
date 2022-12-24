@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://dghb80wur7csu"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_odn0t"]
+bounce = 0.5
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d7jku"]
+size = Vector3(500, 20, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y1ms8"]
+size = Vector3(20, 20, 540)
+
+[node name="FieldCollision" type="StaticBody3D"]
+collision_layer = 32768
+physics_material_override = SubResource("PhysicsMaterial_odn0t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 260)
+shape = SubResource("BoxShape3D_d7jku")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -260)
+shape = SubResource("BoxShape3D_d7jku")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 260, 0, 0)
+shape = SubResource("BoxShape3D_y1ms8")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -260, 0, 0)
+shape = SubResource("BoxShape3D_y1ms8")
