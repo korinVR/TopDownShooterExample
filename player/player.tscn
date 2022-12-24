@@ -2,15 +2,17 @@
 
 [ext_resource type="Script" path="res://player/Player.gd" id="1_aaysd"]
 
-[sub_resource type="PrismMesh" id="PrismMesh_t0kuc"]
+[sub_resource type="PrismMesh" id="PrismMesh_nf4a4"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_0jr7e"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_kxqmy"]
 radius = 5.0
 
 [node name="Player" type="RigidBody3D" groups=["player"]]
-collision_mask = 32768
+collision_mask = 33024
 axis_lock_linear_y = true
 mass = 10000.0
+max_contacts_reported = 1
+contact_monitor = true
 lock_rotation = true
 script = ExtResource("1_aaysd")
 
@@ -18,13 +20,15 @@ script = ExtResource("1_aaysd")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Model"]
 transform = Transform3D(10, -6.97574e-15, -1.5246e-23, -1.5246e-22, -4.37114e-07, 1, -6.97574e-15, -10, -4.37114e-08, 2.08165e-12, 2.08165e-12, -2)
-mesh = SubResource("PrismMesh_t0kuc")
+mesh = SubResource("PrismMesh_nf4a4")
 skeleton = NodePath("../..")
 
 [node name="MyShotSpawnPosition" type="Marker3D" parent="Model"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, -6)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_0jr7e")
+shape = SubResource("SphereShape3D_kxqmy")
 
 [node name="CameraTarget" type="Node3D" parent="." groups=["player_camera_target"]]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

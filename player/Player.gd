@@ -36,3 +36,7 @@ func _physics_process(delta: float) -> void:
 func get_camera_target() -> Node3D:
 	return $CameraTarget
 
+func _on_body_entered(body: Node) -> void:
+	var collision := body as CollisionObject3D
+	if collision.get_collision_layer_value(9):
+		queue_free()
