@@ -17,6 +17,8 @@ func _ready() -> void:
 		var level := Level.instantiate()
 		add_child(level)
 		level.name = "Level"
+		level.owner = self
+		level.set_unique_name_in_owner(true)
 		
 		var player := Player.instantiate()
 		var spwan_transform := (level.get_node("PlayerSpawnPoint") as Node3D).global_transform

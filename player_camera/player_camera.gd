@@ -9,7 +9,9 @@ func _ready():
 	process_priority = 10
 
 func _process(delta):
-	var player = $/root/Main/Level/Player
+	var player = %Level/%Player
+	if player == null:
+		return
 
 	target_position = target_position.lerp(player.get_camera_target().global_position, delta * follow_speed)
 	global_position = target_position + offset
