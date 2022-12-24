@@ -28,3 +28,7 @@ func _physics_process(delta: float) -> void:
 		my_shot.apply_impulse(forward * 100)
 	
 	($CameraTarget as Node3D).position = linear_velocity * 0.8
+
+func get_camera_target() -> Node3D:
+	return $CameraTarget
+

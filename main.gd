@@ -1,7 +1,7 @@
 extends Node3D
 
 const TitleScene = preload("res://title/title.tscn")
-const GameScene = preload("res://levels/level_1.tscn")
+const Level = preload("res://levels/level_1.tscn")
 
 const Player = preload("res://player/player.tscn")
 
@@ -14,18 +14,18 @@ func _ready() -> void:
 #		await title_scene.game_started
 #		title_scene.queue_free()
 		
-		var game_scene := GameScene.instantiate()
-		add_child(game_scene)
+		var level := Level.instantiate()
+		add_child(level)
+		level.name = "Level"
 		
 		var player := Player.instantiate()
-		var spwan_transform := (game_scene.get_node("PlayerSpawnPoint") as Node3D).global_transform
+		var spwan_transform := (level.get_node("PlayerSpawnPoint") as Node3D).global_transform
 		player.global_transform = spwan_transform
-		game_scene.add_child(player)
+		level.add_child(player)
 		
 		await reset_pressed
-		game_scene.queue_free()
+		level.queue_free()
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Reset"):
 		reset_pressed.emit()
-
