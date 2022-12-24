@@ -14,26 +14,40 @@ func _ready() -> void:
 		await title_scene.game_started
 		title_scene.queue_free()
 		
-		var level := Level.instantiate()
-		add_child(level)
-		level.name = "Level"
-		level.owner = self
-		level.set_unique_name_in_owner(true)
+		var player_left := 3
 		
-		while true:
-			if %Level/%Player == null:
-				var player := Player.instantiate()
-				var spwan_transform := (level.get_node("PlayerSpawnPoint") as Node3D).global_transform
-				player.global_transform = spwan_transform
-				level.add_child(player)
-				
-			if get_tree().get_nodes_in_group("enemy").size() == 0:
-				break
+		for level_index in [1, 1]:
+			var level := Level.instantiate()
+			add_child(level)
+			level.name = "Level"
+			level.owner = self
+			level.set_unique_name_in_owner(true)
 			
-			await get_tree().process_frame
-		
-#		await reset_pressed
-		level.free()
+			var is_gameover := false
+			
+			while true:
+				if %Level/%Player == null:
+					player_left -= 1
+					print(player_left)
+					
+					if player_left == 0:
+						is_gameover = true
+						break
+					
+					var player := Player.instantiate()
+					var spwan_transform := (level.get_node("PlayerSpawnPoint") as Node3D).global_transform
+					player.global_transform = spwan_transform
+					level.add_child(player)
+					
+				if get_tree().get_nodes_in_group("enemy").size() == 0:
+					break
+				
+				await get_tree().process_frame
+			
+			level.free()
+			
+			if is_gameover:
+				break
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Reset"):
