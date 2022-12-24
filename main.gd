@@ -9,10 +9,10 @@ signal reset_pressed()
 
 func _ready() -> void:
 	while true:
-#		var title_scene := TitleScene.instantiate()
-#		add_child(title_scene)
-#		await title_scene.game_started
-#		title_scene.queue_free()
+		var title_scene := TitleScene.instantiate()
+		add_child(title_scene)
+		await title_scene.game_started
+		title_scene.queue_free()
 		
 		var level := Level.instantiate()
 		add_child(level)
@@ -24,9 +24,15 @@ func _ready() -> void:
 		var spwan_transform := (level.get_node("PlayerSpawnPoint") as Node3D).global_transform
 		player.global_transform = spwan_transform
 		level.add_child(player)
+
+		while true:
+			await get_tree().create_timer(0).timeout
+			if get_tree().get_nodes_in_group("enemy").size() == 0:
+				break
 		
-		await reset_pressed
-		level.queue_free()
+#		await reset_pressed
+		level.free()
+#		await get_tree().create_timer(0).timeout
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Reset"):

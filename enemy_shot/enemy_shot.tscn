@@ -6,8 +6,11 @@ albedo_color = Color(1, 0, 0.337255, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_w2yuv"]
 material = SubResource("StandardMaterial3D_a6bst")
+radius = 1.0
+height = 2.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_6eixu"]
+radius = 1.0
 
 [node name="EnemyShot" type="RigidBody3D"]
 collision_layer = 256
