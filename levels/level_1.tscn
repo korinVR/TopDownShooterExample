@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://ctxxjl8218ait"]
+[gd_scene load_steps=7 format=3 uid="uid://ctxxjl8218ait"]
 
 [ext_resource type="Texture2D" uid="uid://c433e6m3380br" path="res://background.png" id="1_4sst7"]
 [ext_resource type="PackedScene" uid="uid://c8jg7fjdbtbdm" path="res://enemy_base/enemy_base.tscn" id="2_hiwr1"]
 [ext_resource type="PackedScene" uid="uid://dbajpjqyku81r" path="res://enemy_ship/enemy_ship.tscn" id="3_fkps6"]
+[ext_resource type="PackedScene" uid="uid://dghb80wur7csu" path="res://field_collision.tscn" id="4_mfnw1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lfepa"]
 albedo_texture = ExtResource("1_4sst7")
@@ -24,3 +25,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.6223, 0, -64.757)
 
 [node name="EnemyShip" parent="." instance=ExtResource("3_fkps6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.3237, 0, 59.4709)
+
+[node name="FieldCollision" parent="." instance=ExtResource("4_mfnw1")]
