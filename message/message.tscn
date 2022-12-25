@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cxoqyo7lms4pg"]
+[gd_scene load_steps=3 format=3 uid="uid://cxoqyo7lms4pg"]
 
 [ext_resource type="Script" path="res://message/message.gd" id="1_v1iye"]
+[ext_resource type="LabelSettings" uid="uid://bsw2aa6k57ggr" path="res://label_settings.tres" id="2_s6eco"]
 
 [node name="Message" type="Node2D"]
 position = Vector2(576, 324)
@@ -19,3 +20,4 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "DUMMY MESSAGE"
+label_settings = ExtResource("2_s6eco")

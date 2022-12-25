@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://drragbomxrd0f"]
+[gd_scene load_steps=3 format=3 uid="uid://drragbomxrd0f"]
 
 [ext_resource type="Script" path="res://title/title.gd" id="1_p4tv6"]
+[ext_resource type="LabelSettings" uid="uid://bsw2aa6k57ggr" path="res://label_settings.tres" id="2_fjjoe"]
 
 [node name="Title" type="Node2D"]
 position = Vector2(576, 324)
@@ -32,5 +33,6 @@ offset_right = 98.0
 offset_bottom = -51.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Godot Top-Down Shooter"
+text = "Top-Down Shooter Example"
+label_settings = ExtResource("2_fjjoe")
 horizontal_alignment = 1

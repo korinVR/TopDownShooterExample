@@ -20,7 +20,9 @@ func _ready() -> void:
 		var player_left := 3
 		
 		for level_index in range(1, 2):
-			print(level_index)
+			var stage_message := Message.instantiate()
+			stage_message.initialize("STAGE %d" % level_index)
+			add_child(stage_message)
 			
 			var level := Level.instantiate()
 			add_child(level)
@@ -44,7 +46,7 @@ func _ready() -> void:
 				
 				await get_tree().process_frame
 			
-			if GameState.is_gameover:
+			if GameState.is_gameover():
 				var message := Message.instantiate()
 				message.initialize("GAME OVER")
 				add_child(message)
@@ -52,7 +54,13 @@ func _ready() -> void:
 				await get_tree().create_timer(5).timeout
 				level.free()
 				break
-				
+			
+			# Level clear
+			var message := Message.instantiate()
+			message.initialize("STAGE CLEAR")
+			add_child(message)
+			
+			await get_tree().create_timer(5).timeout
 			level.free()
 
 
