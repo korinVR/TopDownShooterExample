@@ -15,6 +15,8 @@ func _physics_process(delta: float) -> void:
 		return
 	var direction = (%Player.global_position - global_position).normalized()
 	apply_force(direction * acceleration)
+	
+	$Model.look_at(%Player.global_position)
 
 func _process(delta: float) -> void:
 	if %Player == null:

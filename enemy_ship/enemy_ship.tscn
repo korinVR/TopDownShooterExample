@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dbajpjqyku81r"]
+[gd_scene load_steps=5 format=3 uid="uid://dbajpjqyku81r"]
 
 [ext_resource type="Script" path="res://enemy_ship/enemy_ship.gd" id="1_ray2f"]
+[ext_resource type="PackedScene" uid="uid://bt0t81eg1faxa" path="res://enemy_ship/craft_miner.glb" id="2_24txi"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_jux8r"]
 size = Vector3(10, 5, 10)
@@ -21,8 +22,15 @@ script = ExtResource("1_ray2f")
 acceleration = 1e+06
 enemy_shot_speed = 50.0
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="Model" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Model"]
+visible = false
 mesh = SubResource("BoxMesh_jux8r")
+skeleton = NodePath("../..")
+
+[node name="craft_miner" parent="Model" instance=ExtResource("2_24txi")]
+transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, -8.9419, -1.04972, -6.86079)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_k75ms")
