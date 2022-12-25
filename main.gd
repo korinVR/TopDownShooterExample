@@ -17,8 +17,6 @@ func _ready() -> void:
 		
 		GameState.reset()
 		
-		var player_left := 3
-		
 		for level_index in range(1, 2):
 			var stage_message := Message.instantiate()
 			stage_message.initialize("STAGE %d" % level_index)
@@ -55,7 +53,6 @@ func _ready() -> void:
 				level.free()
 				break
 			
-			# Level clear
 			var message := Message.instantiate()
 			message.initialize("STAGE CLEAR")
 			add_child(message)
