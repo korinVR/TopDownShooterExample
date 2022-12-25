@@ -34,4 +34,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.8353, 0, 164.818)
 [node name="EnemyShip" parent="." instance=ExtResource("3_yg4q1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.3237, 0, 59.4709)
 
+[node name="EnemyShip2" parent="." instance=ExtResource("3_yg4q1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.519, 0, -154.946)
+
+[node name="EnemyShip3" parent="." instance=ExtResource("3_yg4q1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 159.922, 3.05176e-05, -134.33)
+
+[node name="EnemyShip4" parent="." instance=ExtResource("3_yg4q1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -177.486, 6.10352e-05, -42.1886)
+
+[node name="EnemyShip5" parent="." instance=ExtResource("3_yg4q1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -193.877, 6.10352e-05, 141.389)
+
+[node name="EnemyShip6" parent="." instance=ExtResource("3_yg4q1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.5792, 6.10352e-05, 172.422)
+
+[node name="EnemyShip7" parent="." instance=ExtResource("3_yg4q1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 178.338, 6.10352e-05, 185.934)
+
+[node name="EnemyShip8" parent="." instance=ExtResource("3_yg4q1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 178.338, 6.10352e-05, 185.934)
+
 [node name="FieldCollision" parent="." instance=ExtResource("4_h8dek")]
