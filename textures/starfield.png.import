@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c433e6m3380br"
-path.s3tc="res://.godot/imported/background.png-98289422cd7d93003950872a7b97021f.s3tc.ctex"
-path.etc2="res://.godot/imported/background.png-98289422cd7d93003950872a7b97021f.etc2.ctex"
+uid="uid://cygjbuqmlbl58"
+path.s3tc="res://.godot/imported/starfield.png-614f7d204b7558d7c1b51d76caba028f.s3tc.ctex"
+path.etc2="res://.godot/imported/starfield.png-614f7d204b7558d7c1b51d76caba028f.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc", "etc2"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://background.png"
-dest_files=["res://.godot/imported/background.png-98289422cd7d93003950872a7b97021f.s3tc.ctex", "res://.godot/imported/background.png-98289422cd7d93003950872a7b97021f.etc2.ctex"]
+source_file="res://textures/starfield.png"
+dest_files=["res://.godot/imported/starfield.png-614f7d204b7558d7c1b51d76caba028f.s3tc.ctex", "res://.godot/imported/starfield.png-614f7d204b7558d7c1b51d76caba028f.etc2.ctex"]
 
 [params]
 

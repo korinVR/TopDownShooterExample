@@ -1,13 +1,13 @@
 [gd_scene load_steps=7 format=3 uid="uid://bvb3ijosg4pf8"]
 
-[ext_resource type="Texture2D" uid="uid://c433e6m3380br" path="res://background.png" id="1_nbc6e"]
+[ext_resource type="Texture2D" uid="uid://cygjbuqmlbl58" path="res://textures/starfield.png" id="1_i7ugs"]
 [ext_resource type="PackedScene" uid="uid://c8jg7fjdbtbdm" path="res://enemy_base/enemy_base.tscn" id="2_jv6uu"]
 [ext_resource type="PackedScene" uid="uid://dbajpjqyku81r" path="res://enemy_ship/enemy_ship.tscn" id="3_yg4q1"]
 [ext_resource type="PackedScene" uid="uid://dghb80wur7csu" path="res://field_collision.tscn" id="4_h8dek"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oh80m"]
-albedo_texture = ExtResource("1_nbc6e")
-uv1_scale = Vector3(5, 5, 5)
+albedo_texture = ExtResource("1_i7ugs")
+uv1_scale = Vector3(2, 2, 2)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_2n738"]
 material = SubResource("StandardMaterial3D_oh80m")
