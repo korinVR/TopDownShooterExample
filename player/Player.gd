@@ -12,8 +12,6 @@ func _ready() -> void:
 	set_unique_name_in_owner(true)
 
 func _physics_process(delta: float) -> void:
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var stick := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	var direction := (transform.basis * Vector3(stick.x, 0, stick.y)).normalized()
 	if direction:
@@ -29,7 +27,7 @@ func _physics_process(delta: float) -> void:
 		my_shot.global_transform = $Model/MyShotSpawnPosition.global_transform
 		
 		var forward := Vector3(cos(angle), 0, sin(angle))
-		my_shot.apply_impulse(forward * 100)
+		my_shot.linear_velocity = linear_velocity + forward * 100
 	
 	($CameraTarget as Node3D).position = linear_velocity * 0.8
 

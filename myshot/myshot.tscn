@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://myshot/myshot.gd" id="1_fapmt"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_wygk7"]
+[sub_resource type="SphereMesh" id="SphereMesh_6hhgu"]
 radius = 1.0
 height = 2.0
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_0tq0n"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_7hduf"]
 radius = 1.0
 
 [node name="MyShot" type="RigidBody3D"]
@@ -18,9 +18,12 @@ lock_rotation = true
 script = ExtResource("1_fapmt")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("SphereMesh_wygk7")
+mesh = SubResource("SphereMesh_6hhgu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_0tq0n")
+shape = SubResource("SphereShape3D_7hduf")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_exited"]
