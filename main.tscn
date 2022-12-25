@@ -24,6 +24,7 @@ offset_bottom = 46.0
 text = "SCORE"
 
 [node name="Score" type="Label" parent="HUD/ScoreLabel"]
+layout_mode = 0
 offset_left = 67.0
 offset_right = 118.0
 offset_bottom = 26.0

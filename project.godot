@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 GameState="*res://game_state/game_state.tscn"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [input]
 
 Reset={
