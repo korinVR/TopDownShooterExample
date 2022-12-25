@@ -5,18 +5,18 @@
 [ext_resource type="PackedScene" uid="uid://dbajpjqyku81r" path="res://enemy_ship/enemy_ship.tscn" id="3_fkps6"]
 [ext_resource type="PackedScene" uid="uid://dghb80wur7csu" path="res://field_collision.tscn" id="4_mfnw1"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lfepa"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oh80m"]
 albedo_texture = ExtResource("1_4sst7")
 uv1_scale = Vector3(5, 5, 5)
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_rf5vb"]
-material = SubResource("StandardMaterial3D_lfepa")
+[sub_resource type="PlaneMesh" id="PlaneMesh_2n738"]
+material = SubResource("StandardMaterial3D_oh80m")
 size = Vector2(500, 500)
 
-[node name="Level1" type="Node3D"]
+[node name="Level" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("PlaneMesh_rf5vb")
+mesh = SubResource("PlaneMesh_2n738")
 
 [node name="PlayerSpawnPoint" type="Marker3D" parent="."]
 
