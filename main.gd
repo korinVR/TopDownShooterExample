@@ -4,6 +4,7 @@ const TitleScene = preload("res://title/title.tscn")
 const Level = preload("res://levels/level_1.tscn")
 
 const Player = preload("res://player/player.tscn")
+const Message = preload("res://message/message.tscn")
 
 signal reset_pressed()
 
@@ -43,10 +44,17 @@ func _ready() -> void:
 				
 				await get_tree().process_frame
 			
-			level.free()
-			
 			if GameState.is_gameover:
+				var message := Message.instantiate()
+				message.initialize("GAME OVER")
+				add_child(message)
+				
+				await get_tree().create_timer(5).timeout
+				level.free()
 				break
+				
+			level.free()
+
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Reset"):
