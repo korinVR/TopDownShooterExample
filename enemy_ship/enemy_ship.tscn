@@ -23,7 +23,6 @@ contact_monitor = true
 lock_rotation = true
 linear_damp = 1.0
 script = ExtResource("1_ray2f")
-acceleration = 1e+06
 enemy_shot_speed = 50.0
 
 [node name="Model" type="Node3D" parent="."]
