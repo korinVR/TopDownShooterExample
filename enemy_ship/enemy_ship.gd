@@ -11,15 +11,19 @@ func _ready() -> void:
 	shot_timer = randf_range(1, 2)
 
 func _physics_process(delta: float) -> void:
+	if %Player == null:
+		return
 	var direction = (%Player.global_position - global_position).normalized()
 	apply_force(direction * acceleration)
 
 func _process(delta: float) -> void:
+	if %Player == null:
+		return
+	
 	shot_timer -= delta
 	if shot_timer > 0:
 		return
 	
-	print("fire")
 	shot_timer = randf_range(1, 2)
 	
 	var enemy_shot := EnemyShot.instantiate()

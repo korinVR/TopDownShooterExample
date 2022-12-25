@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dghb80wur7csu" path="res://field_collision.tscn" id="4_mfnw1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oh80m"]
+shading_mode = 0
 albedo_texture = ExtResource("1_5v4yh")
 uv1_scale = Vector3(2, 2, 2)
 
@@ -16,6 +17,7 @@ size = Vector2(500, 500)
 [node name="Level" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
 mesh = SubResource("PlaneMesh_2n738")
 
 [node name="PlayerSpawnPoint" type="Marker3D" parent="."]
@@ -27,3 +29,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.6223, 0, -64.757)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.3237, 0, 59.4709)
 
 [node name="FieldCollision" parent="." instance=ExtResource("4_mfnw1")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.958198, -0.169914, -0.230188, 0.286106, 0.569057, 0.77092, 0, -0.804552, 0.593882, 0, 102.142, 0)

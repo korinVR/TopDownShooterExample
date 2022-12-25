@@ -1,10 +1,9 @@
 [gd_scene load_steps=4 format=3 uid="uid://cry177u2y4cs1"]
 
 [ext_resource type="Script" path="res://player/Player.gd" id="1_aaysd"]
+[ext_resource type="PackedScene" uid="uid://dx423q733rmj8" path="res://player/craft_speederA.glb" id="2_rxivu"]
 
-[sub_resource type="PrismMesh" id="PrismMesh_nf4a4"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_kxqmy"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_iexbq"]
 radius = 5.0
 
 [node name="Player" type="RigidBody3D" groups=["player"]]
@@ -18,16 +17,14 @@ script = ExtResource("1_aaysd")
 
 [node name="Model" type="Node3D" parent="."]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Model"]
-transform = Transform3D(10, -6.97574e-15, -1.5246e-23, -1.5246e-22, -4.37114e-07, 1, -6.97574e-15, -10, -4.37114e-08, 2.08165e-12, 2.08165e-12, -2)
-mesh = SubResource("PrismMesh_nf4a4")
-skeleton = NodePath("../..")
-
 [node name="MyShotSpawnPosition" type="Marker3D" parent="Model"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, -6)
 
+[node name="craft_speederA" parent="Model" instance=ExtResource("2_rxivu")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -10.0047, -1.56281, -8.75526)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_kxqmy")
+shape = SubResource("SphereShape3D_iexbq")
 
 [node name="CameraTarget" type="Node3D" parent="." groups=["player_camera_target"]]
 
