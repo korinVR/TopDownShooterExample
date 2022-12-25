@@ -5,7 +5,7 @@ const MyShot: PackedScene = preload("res://myshot/myshot.tscn")
 const SPEED = 5.0
 const ACCELERATION = 2000000.0
 
-var angle := 0.0
+var angle := -PI / 2
 
 func _ready() -> void:
 	owner = get_parent()

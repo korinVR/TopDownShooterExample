@@ -5,6 +5,10 @@ extends Camera3D
 
 var target_position: Vector3 = Vector3.ZERO
 
+func reset() -> void:
+	var player = %Level/%Player
+	target_position = player.get_camera_target().global_position
+
 func _ready():
 	process_priority = 10
 

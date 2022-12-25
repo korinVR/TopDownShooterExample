@@ -30,6 +30,8 @@ func _ready() -> void:
 					player.global_transform = spwan_transform
 					%Level.add_child(player)
 					
+					%PlayerCamera.reset()
+					
 				if get_tree().get_nodes_in_group("enemy").size() == 0:
 					break
 				
@@ -45,8 +47,9 @@ func _ready() -> void:
 			await get_tree().create_timer(3).timeout
 			%Level.free()
 		
-		_show_message("ENDING")
-		await get_tree().create_timer(3).timeout
+		if !GameState.is_gameover():
+			_show_message("ENDING")
+			await get_tree().create_timer(3).timeout
 
 
 func _load_level(level_index: int) -> void:
