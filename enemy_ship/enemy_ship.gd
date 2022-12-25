@@ -36,5 +36,6 @@ func _process(delta: float) -> void:
 	var direc
 
 func _on_body_entered(body: Node) -> void:
-	GameState.add_score(100)
-	queue_free()
+	if body.get_collision_layer_value(2):
+		GameState.add_score(100)
+		queue_free()

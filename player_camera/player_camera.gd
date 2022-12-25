@@ -18,4 +18,4 @@ func _process(delta):
 		return
 
 	target_position = target_position.lerp(player.get_camera_target().global_position, delta * follow_speed)
-	global_position = target_position + offset
+	global_position = target_position + offset * 1.5

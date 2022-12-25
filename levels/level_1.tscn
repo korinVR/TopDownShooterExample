@@ -28,6 +28,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.6223, 0, -64.757)
 [node name="EnemyShip" parent="." instance=ExtResource("3_fkps6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66.3237, 0, 59.4709)
 
+[node name="EnemyShip2" parent="." instance=ExtResource("3_fkps6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -129.279, 0, -60.9965)
+
+[node name="EnemyShip3" parent="." instance=ExtResource("3_fkps6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.084, 0, -168.916)
+
 [node name="FieldCollision" parent="." instance=ExtResource("4_mfnw1")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]

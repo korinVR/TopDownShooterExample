@@ -40,12 +40,14 @@ func _ready() -> void:
 			if GameState.is_gameover():
 				_show_message("GAME OVER")
 				await get_tree().create_timer(3).timeout
-				%Level.free()
+				%Level.queue_free()
+				await get_tree().process_frame
 				break
 			
 			_show_message("LEVEL COMPLETE")
 			await get_tree().create_timer(3).timeout
-			%Level.free()
+			%Level.queue_free()
+			await get_tree().process_frame
 		
 		if !GameState.is_gameover():
 			_show_message("ENDING")

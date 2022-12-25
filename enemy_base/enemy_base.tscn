@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8jg7fjdbtbdm"]
+[gd_scene load_steps=6 format=3 uid="uid://c8jg7fjdbtbdm"]
 
 [ext_resource type="Script" path="res://enemy_base/enemy_base.gd" id="1_76050"]
 [ext_resource type="PackedScene" uid="uid://bmfv2tebe08fr" path="res://enemy_base/hangar_roundB.glb" id="2_khank"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bn4om"]
+bounce = 1.0
 
 [sub_resource type="TorusMesh" id="TorusMesh_s8qux"]
 inner_radius = 16.0
@@ -14,6 +17,7 @@ radius = 20.0
 [node name="EnemyBase" type="RigidBody3D" groups=["enemy"]]
 collision_layer = 128
 collision_mask = 3
+physics_material_override = SubResource("PhysicsMaterial_bn4om")
 max_contacts_reported = 1
 contact_monitor = true
 freeze = true
