@@ -24,6 +24,21 @@ offset_bottom = 46.0
 text = "SCORE"
 
 [node name="Score" type="Label" parent="HUD/ScoreLabel"]
+layout_mode = 0
+offset_left = 67.0
+offset_right = 118.0
+offset_bottom = 26.0
+text = "9999"
+
+[node name="PlayerLeftLabel" type="Label" parent="HUD"]
+offset_left = 25.0
+offset_top = 590.0
+offset_right = 76.0
+offset_bottom = 616.0
+text = "LEFT"
+
+[node name="PlayerLeft" type="Label" parent="HUD/PlayerLeftLabel"]
+layout_mode = 1
 offset_left = 67.0
 offset_right = 118.0
 offset_bottom = 26.0

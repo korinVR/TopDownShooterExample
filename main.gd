@@ -27,15 +27,10 @@ func _ready() -> void:
 			level.owner = self
 			level.set_unique_name_in_owner(true)
 			
-			var is_gameover := false
-			
 			while true:
 				if %Level/%Player == null:
-					player_left -= 1
-					print(player_left)
-					
-					if player_left == 0:
-						is_gameover = true
+					GameState.decrease_player()
+					if GameState.is_gameover():
 						break
 					
 					var player := Player.instantiate()
@@ -50,7 +45,7 @@ func _ready() -> void:
 			
 			level.free()
 			
-			if is_gameover:
+			if GameState.is_gameover:
 				break
 
 func _input(event: InputEvent) -> void:
